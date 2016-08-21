@@ -7,12 +7,12 @@ var queue = require('queue')
 inherits(Model, events.EventEmitter)
 
 function Model (storage, data) {
-  this.id = storage.key()
-  this.collectionId = storage.parent().key()
+  this.id = storage.key
+  this.collectionId = storage.parent.key
   this.storage = {
     public: storage,
-    private: storage.parent().parent().child('private/' + this.collectionId + '/' + this.id),
-    unique: storage.parent().parent().child('unique/' + this.collectionId)
+    private: storage.parent.parent.child('private/' + this.collectionId + '/' + this.id),
+    unique: storage.parent.parent.child('unique/' + this.collectionId)
   }
 
   this.data = data || {}
@@ -248,7 +248,7 @@ Model.prototype._dodestroy = function (cb, err, oldData) {
 
 Model.prototype._processSnapshot = function (cb, snapshot) {
   var data = snapshot.val()
-  var isPrivate = snapshot.ref().parent().parent().key() === 'private'
+  var isPrivate = snapshot.ref().parent.parent.key === 'private'
 
   if (this._status) {
     this._status[isPrivate ? 'private' : 'public'] = data ? 'loaded' : 'notFound'
