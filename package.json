@@ -1,6 +1,6 @@
 {
   "name": "realtime-model",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Firebase compatible model abstraction",
   "keywords": [
     "firebase",
