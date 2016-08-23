@@ -248,7 +248,7 @@ Model.prototype._dodestroy = function (cb, err, oldData) {
 
 Model.prototype._processSnapshot = function (cb, snapshot) {
   var data = snapshot.val()
-  var isPrivate = snapshot.ref().parent.parent.key === 'private'
+  var isPrivate = snapshot.ref.parent.parent.key === 'private'
 
   if (this._status) {
     this._status[isPrivate ? 'private' : 'public'] = data ? 'loaded' : 'notFound'
