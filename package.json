@@ -1,6 +1,6 @@
 {
   "name": "realtime-model",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Firebase compatible model abstraction",
   "keywords": [
     "firebase",
@@ -20,8 +20,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jessetane/realtime-model.git"
+    "url": "git+https://github.com/goggledefogger/realtime-model.git"
   },
-  "author": "jesse.tane@gmail.com",
+  "author": "dannybauman@gmail.com",
   "license": "WTFPL"
 }
